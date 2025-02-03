@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Home Loan Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2C3E50;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #ECF0F1;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #FAFAFA;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul li::before {
+            content: "🏠";
+            font-size: 24px;
+            position: absolute;
+            left: -8px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button[type="submit"] {
+            background-color: #2980B9;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #3498DB;
+        }
+
+        #emiResult {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #27AE60;
+        }
+
+        #emiResult p {
+            font-size: 24px;
+            margin: 10px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Apply for a New Home Loan</h1>
+        <nav>
+            <a href="/homeLoanOffering">Home Loan Offerings</a>
+            <a href="/dashboard">Home Loan Dashboard</a>
+            <a href="/newHomeLoan">New Home Loan</a>
+            <a href="/homeLoanTracker">Home Loan Tracker</a>
+        </nav>
+    </header>
+    
+    <section>
+        <h2>New Home Loan Offers</h2>
+        <ul id="loanOffersList">
+            
+            <li>Offer 1: Get 1% off the standard rate for first-time homebuyers.</li>
+            <li>Offer 2: No processing fees for loans above ₹200,000.</li>
+            <li>Offer 3: Flexible repayment options with 5 years interest-free period.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>EMI Calculator</h2>
+        <form id="emiCalculatorForm">
+            <label for="loanAmount">Loan Amount:</label>
+            <input type="number" id="loanAmount" name="loanAmount" required>
+            
+            <label for="rateOfInterest">Rate of Interest (%):</label>
+            <input type="number" id="rateOfInterest" name="rateOfInterest" step="0.01" required>
+            
+            <label for="loanTenure">Loan Tenure (in years):</label>
+            <input type="number" id="loanTenure" name="loanTenure" required>
+            
+            <button type="submit">Calculate EMI</button>
+        </form>
+        
+        <div id="emiResult">
+            <h3>Your Monthly EMI is:</h3>
+            <p id="emiAmount"></p>
+        </div>
+    </section>
+
+    <script>
+        // JS code for calculating EMI
+        document.getElementById('emiCalculatorForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+            const rateOfInterest = parseFloat(document.getElementById('rateOfInterest').value) / 12 / 100;
+            const loanTenure = parseFloat(document.getElementById('loanTenure').value) * 12;
+            
+            const emi = (loanAmount * rateOfInterest * Math.pow(1 + rateOfInterest, loanTenure)) / (Math.pow(1 + rateOfInterest, loanTenure) - 1);
+            
+            document.getElementById('emiAmount').textContent = `₹${emi.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>

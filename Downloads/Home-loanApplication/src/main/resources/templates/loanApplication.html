@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply for Home Loan</title>
+<link rel="stylesheet" href="/css/styles.css">
+<style>
+		body {
+			font-family: 'Arial', sans-serif;
+			background: url('/images/homeloan.jpg') no-repeat center center fixed;
+			background-size: cover;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			text-align: center;
+			color: #333;
+		}
+
+		.application-container {
+			background: rgba(255, 255, 255, 0.9);
+			padding: 40px;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			width: 90%;
+			max-width: 600px;
+			margin: 20px;
+		}
+		
+		.application-container h1 {
+			margin-bottom: 20px;
+			font-size: 32px;
+			color: #4CAF50;
+		}
+		
+		.application-container form {
+			display: flex;
+			flex-direction: column;
+		}
+		
+		.application-container input, select {
+			padding: 10px;
+			margin: 10px 0;
+			font-size: 16px;
+			border-radius: 5px;
+			border: 1px solid #ddd;
+		}
+		
+		.application-container button {
+			padding: 10px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			font-size: 18px;
+		}
+		
+		.application-container button:hover {
+			background-color: #45a049;
+		}
+</style>
+</head>
+<body>
+	<div class="application-container">
+		<h1>Apply for Home Loan</h1>
+
+		<form action="/api/loans/submitLoanApplication" method="post">
+		
+			<label for="loanType">Loan Type:</label> 
+				<select id="loanType"name="loanType">
+					<option value="fixed">Fixed</option>
+					<option value="variable">Variable</option>
+					<option value="floating">Floating</option>
+				</select> 
+			<label for="loanAmt">Loan Amount:</label> 
+			<input type="number" id="loanAmt" name="loanAmt" step="0.01" required />
+			
+			<label for="loanTenure">Loan Tenure:</label> 
+			<input type="number" name="tenure" required>
+			
+			<label for="nomineeDetails"> Nominee Details</label>
+			<input type ="String" name ="nomineeDetails" required/>
+			
+			<label for="income">Income:</label> 
+			<input type="number" id="income"name="income" required />
+
+			<button type="submit">Submit Application</button>
+		</form>
+
+	</div>
+</body>
+</html>

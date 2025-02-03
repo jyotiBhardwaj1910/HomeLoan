@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .card {
+            margin: 20px 0;
+        }
+        .card-header {
+            font-weight: bold;
+            background-color: #007bff;
+            color: white;
+        }
+        .card-body {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Loan Details</h1>
+        <div class="card">
+            <div class="card-header">
+                Loan Details
+            </div>
+            <div class="card-body">
+                <p><strong>Loan Number:</strong> <span th:text="${loanEntity.loanId != null ? loanEntity.loanId : 'Not Available'}"></span></p>
+                <p><strong>Loan Type:</strong> <span th:text="${loanEntity.loanType != null ? loanEntity.loanType : 'N/A'}"></span></p>
+                <p><strong>Nominee Details:</strong> <span th:text="${loanEntity.nomineeDetails != null ? loanEntity.nomineeDetails : 'N/A'}"></span></p>
+                <p><strong>Total Loan Amount:</strong> <span th:text="${loanEntity.loanAmt != null ? loanEntity.loanAmt : 'N/A'}"></span></p>
+                <p><strong>Loan Tenure:</strong> <span th:text="${loanEntity.tenure != null ? loanEntity.tenure + ' years' : 'N/A'}"></span></p>
+                <p><strong>Current Rate of Interest:</strong> <span th:text="${loanEntity.currentRateOfInterest != null ? loanEntity.currentRateOfInterest + '%' : 'N/A'}"></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

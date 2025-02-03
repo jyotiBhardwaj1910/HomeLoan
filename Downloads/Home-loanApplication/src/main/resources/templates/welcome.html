@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Loan Welcome Page</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background: url('/images/welcome.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            width: 90%; /* Reduce the width of the header */
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px; /* Adjust padding to make it more compact */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%); /* Center the header */
+            border-radius: 10px; /* Optional: Add rounded corners */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-right: 15px; /* Reduce margin between links */
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px; /* Add some padding for a cleaner look */
+        }
+        
+        .login-container {
+            margin-left: auto;
+        }
+        
+        .login-button {
+            background: #007bff;
+            color: white;
+            padding: 5px 15px; /* Make the button slightly smaller */
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+        .welcome {
+            z-index: 1;
+            padding: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/offerings">Home Loan Offerings</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/new-loan">New Home Loan</a></li>
+                <li><a href="/tracker">Home Loan Tracker</a></li>
+            </ul>
+        </nav>
+        <div class="login-container">
+            <a href="/login" class="login-button">Login</a>
+        </div>
+    </header>
+    <main>
+        <section class="welcome">
+            <h1>Welcome to Dream Home Loan Services</h1>
+            <p>Make Your Dreams Come True 🤗</p>
+            <p>Explore our home loan offerings and get the best rates available 🤝</p>
+            
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Home Loan Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>

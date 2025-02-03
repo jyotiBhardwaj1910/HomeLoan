@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Loan Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('/images/homeloan.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #4CAF50;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .view-details {
+            background-color: #2196F3;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .view-details:hover {
+            background-color: #1976D2;
+        }
+
+        .message {
+            background-color: #ffeb3b;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Mobile responsive styling */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            .view-details {
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Home Loan Tracker</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Loan Account Number</th>
+                    <th>Loan Creation Date</th>
+                    <th>Loan Amount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1234567890</td>
+                    <td>2024-08-25</td>
+                    <td>₹100,0000</td>
+                    <td><a href="#" class="view-details">View Details</a></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="message">Home loan creation will be completed after required approvals</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>0987654321</td>
+                    <td>2024-07-15</td>
+                    <td>₹200,0000</td>
+                    <td><a href="#" class="view-details">View Details</a></td>
+                </tr>
+                <tr>
+                    <td>1122334455</td>
+                    <td>2024-08-01</td>
+                    <td>₹150,0000</td>
+                    <td><a href="/loanDetails" class="view-details">View Details</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

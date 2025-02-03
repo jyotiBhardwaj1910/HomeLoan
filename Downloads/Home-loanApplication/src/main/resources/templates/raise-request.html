@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">	
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raise a Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submitted-query {
+            background-color: #d1f7d1;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Raise a Request</h1>
+
+    <form action="/api/loans/submitRequest" method="POST">
+        <label for="customerName">Your Name</label>
+        <input type="text" id="customerName" name="customerName" placeholder="Enter your name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="query">Your Query</label>
+        <textarea id="query" name="query" rows="5" placeholder="Enter your query" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Display the posted query if exists -->
+    <div class="submitted-query" th:if="${postedQuery != null}">
+        <h3>Your Query:</h3>
+        <p th:text="${postedQuery}"></p>
+    </div>
+
+</body>
+</html>

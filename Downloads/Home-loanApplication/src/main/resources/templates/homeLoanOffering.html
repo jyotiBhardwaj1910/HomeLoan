@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Loan Offers - Indian Banks</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Reset and styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/images/homeloan.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #333;
+        }
+
+        .offerings-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            width: 85%;
+            max-width: 1200px;
+            margin: 20px;
+        }
+
+        .offerings-container h1 {
+            font-size: 34px;
+            color: #2C3E50;
+            margin-bottom: 15px;
+        }
+
+        .offerings-container p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #7F8C8D;
+        }
+
+        .offerings-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .offerings-container th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .offerings-container th {
+            background-color: #2980B9;
+            color: white;
+            font-size: 16px;
+        }
+
+        .offerings-container td {
+            background-color: #f1f1f1;
+        }
+
+        .offerings-container .apply-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2980B9;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .offerings-container .apply-button:hover {
+            background-color: #1F618D;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2980B9;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background-color: #1F618D;
+        }
+    </style>
+</head>
+<body>
+    <div class="offerings-container">
+        <h1>Indian Bank Home Loan Offers</h1>
+        <p>Select the home loan type that best suits your needs. Click "Apply" to begin your application process.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Loan Type</th>
+                    <th>Interest Rate</th>
+                    <th>Term (Years)</th>
+                    <th>Estimated EMI</th>
+                    <th>Apply</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Regular Home Loan</td>
+                    <td>7.25%</td>
+                    <td>20</td>
+                    <td>₹18,500</td>
+                    <td><a href="/loanApplication?loanType=regularHomeLoan" class="apply-button">Apply</a></td>
+                </tr>
+                <tr>
+                    <td>Home Loan for Construction</td>
+                    <td>7.50%</td>
+                    <td>15</td>
+                    <td>₹23,000</td>
+                    <td><a href="/loanApplication?loanType=homeConstructionLoan" class="apply-button">Apply</a></td>
+                </tr>
+                <tr>
+                    <td>Home Loan for Plot Purchase</td>
+                    <td>7.40%</td>
+                    <td>10</td>
+                    <td>₹28,000</td>
+                    <td><a href="/loanApplication?loanType=plotPurchaseLoan" class="apply-button">Apply</a></td>
+                </tr>
+                <tr>
+                    <td>Home Renovation Loan</td>
+                    <td>7.80%</td>
+                    <td>7</td>
+                    <td>₹15,500</td>
+                    <td><a href="/loanApplication?loanType=homeRenovationLoan" class="apply-button">Apply</a></td>
+                </tr>
+                <tr>
+                    <td>Home Extension Loan</td>
+                    <td>7.65%</td>
+                    <td>10</td>
+                    <td>₹20,000</td>
+                    <td><a href="/loanApplication?loanType=homeExtensionLoan" class="apply-button">Apply</a></td>
+                </tr>
+                <tr>
+                    <td>Balance Transfer Home Loan</td>
+                    <td>6.95%</td>
+                    <td>20</td>
+                    <td>₹17,000</td>
+                    <td><a href="/loanApplication?loanType=balanceTransferLoan" class="apply-button">Apply</a></td>
+                </tr>
+                <tr>
+                    <td>Top-Up Home Loan</td>
+                    <td>8.10%</td>
+                    <td>5</td>
+                    <td>₹13,500</td>
+                    <td><a href="/loanApplication?loanType=topUpHomeLoan" class="apply-button">Apply</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/dashboard" class="back-button">Back to Dashboard</a>
+    </div>
+</body>
+</html>
